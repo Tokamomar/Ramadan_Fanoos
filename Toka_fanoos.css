@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1f1542;
+}
+
+#work {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    /* we add the animation property itself to the element we want it animated (in this case I added it to the entire fanoos) */
+   /* Using animation short hand: name(swingFanoos) duration timing-function iteration  */
+    animation: swingFanoos 5s linear infinite;   
+}
+
+/* using my animation name after the property keywords to get them linked together */
+/* Here is where I define my animation/keyframes to determine what my animation looks like */
+@keyframes swingFanoos {
+    /* at the begining of the animation (0%), no rotation happens */
+    0% {
+        transform: rotate(0deg);    
+    }
+    /* at 25% of the animation, a 5-degree rotation happens swinging the fanoos to the right */
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+    /* at 75% of the animation, the fanoos will swing back to the left by 10 degrees (so I'm using -ve 10) */
+    75% {
+        transform: rotate(-10deg);
+    }
+    /* at the end of the animation (100%), the fanoos will return back to its original position (0 degrees) */
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+#work #wire {
+    margin: 0 auto;
+    height: 130px;
+    width: 10px;
+    background: #261647;
+    border: 5px #0c032e solid;
+}
+
+#work #c1 {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    height: 300px;
+}
+
+#work .light {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    background: rgba(255, 155, 0, 0.08);
+    border-radius: 100%;
+    /* adding animation to the rings effect from candle glowing, also using animation short hand: name(candleGlow) duration timing-function iteration  */
+    animation: candleGlow 1s ease-in-out infinite;
+}
+
+@keyframes candleGlow {
+    /* at the begining of the animation (0%), opacity is set to 0.8 giving it a light glow */
+    0% {
+        opacity: 0.8;
+    }
+    /* in the middle of the animation, opacity is complete giving it the full glow */
+    50% {
+        opacity: 1;
+    }
+    /* at the end of the animation (100%),it'll return to its light glow again */
+    100% {
+        opacity: 0.8;
+    }
+}
+
+#fanos {
+    height: 380px;
+    padding: 10px;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+}
+
+#small-circle {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #261647;
+    border: 5px #0c032e solid;
+    position: relative;
+    z-index: 5;
+}
+
+#half-circle {
+    width: 120px;
+    height: 120px;
+    position: absolute  ;
+    top: 25px;
+    left: 50%;
+    /* using transform property and translateX to move the element to the left by 50% of its original width  */
+    /* using transform property not margin as it gives better performance 
+    and only move the element I want it moved without affecting the entire page/other elements around it  */
+    transform: translateX(-50%);      
+    border-radius: 100%;
+    background: #40315a;
+    border: 5px #0c032e solid;
+}
+
+#bottom-quppa {
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    z-index: 3;
+}
+
+#line {
+    margin: 0 auto;
+    width: 200px;
+    height: 30px;
+    padding-top: 3px;
+    background: #261647;
+    border: 5px #0c032e solid;
+    overflow: hidden;
+    text-align: center;
+}
+
+#line .ball {
+    width: 15px;
+    height: 15px;
+    margin: auto 5px;
+    display: inline-block;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #40315a;
+    border: 5px #0c032e solid;
+}
+
+#top-triangle {
+    margin: 0 auto;
+    width: 210px;
+    height: 0;
+    border-left: 25px transparent solid;
+    border-right: 25px transparent solid;
+    border-bottom: 30px #0c032e solid;
+    position: relative;
+    top: -5px;
+}
+
+#top-triangle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 5px;
+    width: 155px;
+    height: 0;
+    border-left: 15px transparent solid;
+    border-right: 15px transparent solid;
+    border-bottom: 20px #40315a solid;
+    /* using transform property and translateX to move the element to the left by 50% of its original width  */
+    transform: translateX(-50%);  
+}
+
+#box {
+    width: 170px;
+    margin: 0 auto;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    top: -10px;
+    z-index: 1;
+    border: 5px #0c032e solid;
+}
+
+#box #candel {
+    height: 60px;
+    width: 30px;
+    background: #ffffff;
+    border: 5px #0c032e solid;
+    border-bottom: 0;
+    position: absolute;
+    z-index: 1;
+    left: 65px;
+    bottom: 0;
+}
+
+#box #candel:after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    width: 10px;
+    height: 15px;
+    border-radius: 100%;
+    background: #ff9b00;
+    border: 5px #0c032e solid;
+}
+
+
+#box #col {
+    margin: 0 auto;
+    width: 90px;
+    height: 170px;
+    border-left: 5px #0c032e solid;
+    border-right: 5px #0c032e solid;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#final {
+    position: relative;
+    z-index: 4;
+    top: -15px;
+}
+
+#last-triangle {
+    margin: 0 auto;
+    width: 245px;
+    height: 0;
+    border-left: 25px transparent solid;
+    border-right: 25px transparent solid;
+    border-bottom: 25px #0c032e solid;
+    position: relative;
+    top: -5px;
+}
+
+#last-triangle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 5px;
+    width: 190px;
+    height: 0;
+    border-left: 15px transparent solid;
+    border-right: 15px transparent solid;
+    border-bottom: 15px #40315a solid;
+    /* using transform property and translateX to move the element to the left by 50% of its original width  */
+    transform: translateX(-50%); 
+
+}
